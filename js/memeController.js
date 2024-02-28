@@ -13,6 +13,8 @@ function onInit() {
 }
 
 function renderMeme(elImg) {
+    
+    elImg.onload=()=>
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         drawText(gMeme.lines[0].txt,100,100)
     
