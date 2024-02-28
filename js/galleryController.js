@@ -13,5 +13,5 @@ function onImgClick(elImg) {
     setImg(elImg.id)
     document.querySelector('.gallery').classList.add('hidden')
     document.querySelector('.editor').classList.remove('hidden')
-    renderMeme(elImg)
+    renderMeme()
 }

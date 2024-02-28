@@ -6,26 +6,25 @@ function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     renderGallery()
-    // renderMeme()
-
 
     //window.addEventListener('resize', () => resizeCanvas())
 }
 
-function renderMeme(elImg) {
-    
-    elImg.onload=()=>
-    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(gMeme.lines[0].txt,100,100)
+function renderMeme() {
+    const currImageId = getMemeImgId()
+    const img = new Image()
+    img.src = findImg(currImageId).url
+
+
+    img.onload=()=>
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+    drawText(gMeme.lines[0].txt,100,100)
     
 }
 
 function onSetLineChange({value}){
     setLineTxt(value)
-    var img = findImg(gMeme.selectedImgId)
-    const elImg = new Image()
-    elImg.src = img.url
-    renderMeme(elImg)
+    renderMeme()
 }
 
 function drawText(text, x, y) {

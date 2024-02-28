@@ -5,7 +5,7 @@ var gImg =
     { id: makeId(), url: 'img/2.jpg', keywords: ['dog', 'cute'] }]
 
 var gMeme = {
-    selectedImgId: 1,
+    selectedImgId: gImg[0].id,
     selectedLineIdx: 0,
     lines: [
         {
@@ -23,13 +23,17 @@ function getImg() {
 }
 
 function findImg(id) {
-    // console.log(id)
      return  gImg.find(img => img.id === id)
 
 }
 
+function getMemeImgId(){
+    return gMeme.selectedImgId
+}
+
 function setLineTxt(value) {
     gMeme.lines[0].txt = value
+
 
 }
 
