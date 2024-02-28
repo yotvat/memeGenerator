@@ -1,7 +1,7 @@
 'use strict'
 let gElCanvas
 let gCtx
-var LINE_SPACE = 60
+var SPACING = 60
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
@@ -18,10 +18,16 @@ function renderMeme() {
 
     img.onload=()=>{
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        let y = LINE_SPACE
-        meme.lines.forEach(line => {
+        let y = SPACING
+        meme.lines.forEach((line,idx )=> {
+            const meme = getMeme()
         drawText(line.txt,gElCanvas.width / 2, y)
-        y+=LINE_SPACE
+        let txtWidth = gCtx.measureText(line.txt).width
+        line.txtWidth = txtWidth
+        line.y = y
+        line.x = gElCanvas.width / 2
+        if(meme.selectedLineIdx===idx)drawFrame(line.x,y,txtWidth,line.size)
+        y+=SPACING
 
     })
 }
@@ -83,7 +89,14 @@ function onSwitchLineClick(){
 switchLine()
 }
 
-
+function drawFrame(x,y,txtWidth,size){
+    gCtx.beginPath()
+    gCtx.setLineDash([4,10])
+    gCtx.lineWidth = 1
+    gCtx.strokeStyle = 'black'
+    gCtx.strokeRect(x - 5 - (txtWidth / 2) ,y-size+8,txtWidth+8,size+5)
+    gCtx.setLineDash([])
+}
 
 //function resizeCanvas() {
     // const elContainer = document.querySelector('.canvas-container')

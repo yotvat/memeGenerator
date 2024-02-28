@@ -66,11 +66,12 @@ function switchLine() {
     if (gMeme.lines.length <= 1) return
     if (isDirUp) gMeme.selectedLineIdx++
     else gMeme.selectedLineIdx--
-    if(gMeme.selectedLineIdx===gMeme.lines.length) isDirUp = false
-    if(gMeme.selectedLineIdx === 1) isDirUp = true
-
-
-
+    if(gMeme.selectedLineIdx===gMeme.lines.length-1) isDirUp = false
+    if(gMeme.selectedLineIdx === 0) isDirUp = true
     console.log(gMeme.selectedLineIdx)
+    renderMeme()
+
+
+
     
 }
