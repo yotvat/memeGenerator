@@ -80,7 +80,7 @@ function onAddLineClick(){
 }
 
 function onSwitchLineClick(){
-
+switchLine()
 }
 
 

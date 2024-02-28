@@ -28,6 +28,7 @@ var gMeme = {
         }
     ]
 }
+var isDirUp = true
 var gKeywordSearchCountMap = { 'funny': 4, 'presiden': 2 }
 
 function getImg() {
@@ -44,7 +45,7 @@ function getMeme() {
 }
 
 function setLineTxt(value) {
-    gMeme.lines[gMeme.lines.length-1].txt = value
+    gMeme.lines[gMeme.selectedLineIdx].txt = value
 }
 
 function setImg(id) {
@@ -52,7 +53,6 @@ function setImg(id) {
 }
 
 function addLine() {
-    gMeme.selectedLineIdx += 1
     const line = {
         number: gMeme.selectedLineIdx,
         txt: 'enter text',
@@ -60,4 +60,17 @@ function addLine() {
         color: 'green'
     }
     gMeme.lines.push(line)
+
+}
+function switchLine() {
+    if (gMeme.lines.length <= 1) return
+    if (isDirUp) gMeme.selectedLineIdx++
+    else gMeme.selectedLineIdx--
+    if(gMeme.selectedLineIdx===gMeme.lines.length) isDirUp = false
+    if(gMeme.selectedLineIdx === 1) isDirUp = true
+
+
+
+    console.log(gMeme.selectedLineIdx)
+    
 }
