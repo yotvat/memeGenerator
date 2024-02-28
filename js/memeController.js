@@ -98,6 +98,17 @@ function drawFrame(x,y,txtWidth,size){
     gCtx.setLineDash([])
 }
 
+function onLineClick(ev){
+   var x = ev.offsetX
+   var y = ev.offsetY
+    const currLine = gMeme.lines.find(line => {
+        const {x,y,size,txtWidth} = line
+       return ev.offsetX >= x - 5 - (txtWidth / 2) && ev.offsetX <= x  + (txtWidth / 2) + 5 &&
+       ev.offsetY >= y && ev.offsetY <= y + size
+    })
+    console.log('currLine',currLine)
+}
+
 //function resizeCanvas() {
     // const elContainer = document.querySelector('.canvas-container')
     
