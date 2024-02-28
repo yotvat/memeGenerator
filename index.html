@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
+<body onload="onInit()">
     <header>
         <logo><span>
             meme generator
@@ -22,17 +22,27 @@
     
 
     <section class="gallery">
-
+        <div class="img-container hidden">
+            <!-- <img title="president img" onclick="renderMeme(this)" src="img/1.jpg" /> -->
+        </div>
     </section>
 
     <section class="editor hidden">
+        <div class="canvas-container">
+            <canvas width="300" height="500">
 
-        
+            </canvas>
+            <label id="txt"></label>
+            <input onchange="onSetLineChange(this)" name="txt-canvas" class="txt-canvas" type="text" placeholder="insert text to use...">
+        </div>
+
+
     </section>
 
     <script src="services/utilService.js"></script>
     <script src="services/storageService.js"></script>
     <script src="services/memeService.js"></script>
+    <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>
 </body>
 </html>
