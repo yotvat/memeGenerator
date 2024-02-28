@@ -13,7 +13,7 @@ var gImg =
     { id: makeId(), url: 'img/10.jpg', keywords: ['dog', 'cute'] },
     { id: makeId(), url: 'img/11.jpg', keywords: ['dog', 'cute'] },
     { id: makeId(), url: 'img/12.jpg', keywords: ['dog', 'cute'] },
-]
+    ]
 
 
 var gMeme = {
@@ -35,12 +35,12 @@ function getImg() {
 }
 
 function findImg(id) {
-     return  gImg.find(img => img.id === id)
+    return gImg.find(img => img.id === id)
 
 }
 
-function getMemeImgId(){
-    return gMeme.selectedImgId
+function getMeme() {
+    return gMeme
 }
 
 function setLineTxt(value) {
@@ -51,4 +51,15 @@ function setLineTxt(value) {
 
 function setImg(id) {
     gMeme.selectedImgId = id
+}
+
+function addLine() {
+    gMeme.selectedLineIdx +=1
+    const line = {
+        number: gMeme.selectedLineIdx,
+        txt: 'enter text',
+        size: 20,
+        color: 'green'
+    }
+    gMeme.lines.push(line)
 }

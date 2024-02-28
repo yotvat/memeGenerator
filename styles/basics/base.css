@@ -12,3 +12,16 @@ img{
 width: 263px;
 border-radius: 20px;
 }
+
+.rows-btn .btn,
+.advanced-edit .btn,
+.download-share .btn{
+    width: 60px;
+    height: 55px;
+    border: 1px;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+}

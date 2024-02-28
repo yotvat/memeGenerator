@@ -1,16 +1,18 @@
-header{
+header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: RGBA(89, 112, 193, 1);
-    border-radius: 10px;
-}
-.header-logo{
-height: 1em;
-font-size: 1.4em;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 224, 255, 1) 0%, rgba(9, 121, 69, 1) 100%);
+    border-radius: 25px;
+    color: whitesmoke;
 }
 
-.header-nav{
+.header-logo {
+    height: 1em;
+    font-size: 1.4em;
+}
+
+.header-nav {
     cursor: pointer;
     display: flex;
     gap: 10px;

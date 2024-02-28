@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body onload="onInit()">
     <header>
         <logo class="header-logo"><span>
-            meme generator
-        </span>
+                meme generator
+            </span>
         </logo>
         <nav>
             <ul class="header-nav">
@@ -19,7 +21,7 @@
             </ul>
         </nav>
     </header>
-    
+
 
     <section class="gallery">
         <div class="gallery-actions">
@@ -39,11 +41,34 @@
 
     <section class="editor hidden">
         <div class="canvas-container">
-            <canvas width="300" height="500">
+            <canvas width="500" height="500">
 
             </canvas>
-            <label id="txt"></label>
-            <input onchange="onSetLineChange(this)" name="txt-canvas" class="txt-canvas" type="text" placeholder="insert text to use...">
+            <div class="meme-editor">
+                <div class="edit-zone">
+                    <label id="txt"></label>
+                    <input oninput="onSetLineChange(this)" name="txt-canvas" class="txt-canvas" type="text"
+                        placeholder="insert text to use...">
+                    <div class="rows-btn">
+                        <button class="btn switch-row-btn">switch</button>
+                        <button onclick="onAddLineClick()" class="btn add-row-btn">add</button>
+                        <button class="btn delete-row-btn">delete</button>
+                    </div>
+                    <div class="advanced-edit">
+                        <button onclick="onFontUpClick()" class="btn font-up-btn">+</button>
+                        <button onclick="onFontDownClick()" class="btn font-down-btn">-</button>
+                        <button class="btn align-left-btn">left</button>
+                        <button class="btn align-center-btn">center</button>
+                        <button class="btn align-right-btn">right</button>
+                        <label id="color"></label>
+                        <input oninput="onColorInput(this)" type="color">
+                    </div>
+                    <div class="download-share">
+                        <button class="btn download-btn"><a href="#" onclick="downloadCanvas(this)" download="file-name">download</a></button>
+                        <button class="btn share-btn">share</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -55,4 +80,5 @@
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>
 </body>
+
 </html>

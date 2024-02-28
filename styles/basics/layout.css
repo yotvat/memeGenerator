@@ -4,3 +4,43 @@
     grid-template-rows: 1fr 1fr 1fr ;
     gap: 5px;
 }
+
+.canvas-container{
+display: flex;
+justify-content: space-around;
+}
+
+canvas{
+    border-radius: 10px;
+}
+
+.rows-btn{
+    display: flex;
+    gap: 17px;
+}
+
+.meme-editor{
+    /* position: absolute; */
+    background-color: RGBA(34, 37, 44, 1);
+    width: 528px;
+    height: 549px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.edit-zone{
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    align-items: center;
+    gap: 17px;
+}
+
+.advanced-edit{
+    display: flex;
+   background-color: RGBA(25, 165, 159, 1);
+   width: 447px;
+   border-radius: 5px;
+   justify-content: center;
+   gap: 32px;
+}
