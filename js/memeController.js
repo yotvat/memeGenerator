@@ -5,33 +5,25 @@ let gCtx
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    renderMeme()
+    renderGallery()
+    // renderMeme()
 
 
     //window.addEventListener('resize', () => resizeCanvas())
 }
 
-function renderMeme() {
-    const img = new Image()
-    img.src = getImg(1)
-    img.onload = () => {
-        gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+function renderMeme(elImg) {
+    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         drawText(gMeme.lines[0].txt,100,100)
-    }
-
-
-
-
-
-    // console.log(elImg.src)
-    // gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
-    // gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+    
 }
 
 function onSetLineChange({value}){
     setLineTxt(value)
-    renderMeme()
+    var img = findImg(gMeme.selectedImgId)
+    const elImg = new Image()
+    elImg.src = img.url
+    renderMeme(elImg)
 }
 
 function drawText(text, x, y) {
