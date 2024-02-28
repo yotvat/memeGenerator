@@ -1,7 +1,7 @@
 'use strict'
 let gElCanvas
 let gCtx
-
+var LINE_SPACE = 60
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
@@ -16,12 +16,15 @@ function renderMeme() {
     const img = new Image()
     img.src = findImg(currImageId).url
 
-
     img.onload=()=>{
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(meme.lines[meme.selectedLineIdx].txt,gElCanvas.width / 2,10)
-    }
-    
+        let y = LINE_SPACE
+        meme.lines.forEach(line => {
+        drawText(line.txt,gElCanvas.width / 2, y)
+        y+=LINE_SPACE
+
+    })
+}
 }
 
 function onSetLineChange({value}){
@@ -54,6 +57,7 @@ function downloadCanvas(elLink) {
 function onColorInput({value}){
     const meme = getMeme()
     meme.lines[meme.selectedLineIdx].color = value
+    console.log(meme.lines)
     renderMeme()
 }
 
@@ -62,6 +66,7 @@ function onFontUpClick(){
     meme.lines[meme.selectedLineIdx].size +=5
     renderMeme()
 }
+
 function onFontDownClick(){
     const meme = getMeme()
     meme.lines[meme.selectedLineIdx].size -=5
@@ -71,7 +76,11 @@ function onFontDownClick(){
 function onAddLineClick(){
     const meme = getMeme()
     addLine()
-    drawText(meme.lines[meme.selectedLineIdx].txt,gElCanvas.width/2,60)
+    renderMeme()
+}
+
+function onSwitchLineClick(){
+
 }
 
 

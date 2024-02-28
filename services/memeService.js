@@ -44,9 +44,7 @@ function getMeme() {
 }
 
 function setLineTxt(value) {
-    gMeme.lines[0].txt = value
-
-
+    gMeme.lines[gMeme.lines.length-1].txt = value
 }
 
 function setImg(id) {
@@ -54,7 +52,7 @@ function setImg(id) {
 }
 
 function addLine() {
-    gMeme.selectedLineIdx +=1
+    gMeme.selectedLineIdx += 1
     const line = {
         number: gMeme.selectedLineIdx,
         txt: 'enter text',
