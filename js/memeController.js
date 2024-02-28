@@ -63,7 +63,6 @@ function downloadCanvas(elLink) {
 function onColorInput({value}){
     const meme = getMeme()
     meme.lines[meme.selectedLineIdx].color = value
-    console.log(meme.lines)
     renderMeme()
 }
 

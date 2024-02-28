@@ -53,25 +53,28 @@ function setImg(id) {
 }
 
 function addLine() {
+
     const line = {
-        number: gMeme.selectedLineIdx,
+        number: gMeme.lines.length + 1,
         txt: 'enter text',
         size: 20,
         color: 'green'
     }
     gMeme.lines.push(line)
+    console.log(gMeme.lines)
+
 
 }
 function switchLine() {
     if (gMeme.lines.length <= 1) return
     if (isDirUp) gMeme.selectedLineIdx++
     else gMeme.selectedLineIdx--
-    if(gMeme.selectedLineIdx===gMeme.lines.length-1) isDirUp = false
-    if(gMeme.selectedLineIdx === 0) isDirUp = true
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) isDirUp = false
+    if (gMeme.selectedLineIdx === 0) isDirUp = true
     console.log(gMeme.selectedLineIdx)
     renderMeme()
 
 
 
-    
+
 }
