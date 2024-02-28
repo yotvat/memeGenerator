@@ -2,7 +2,19 @@
 
 var gImg =
     [{ id: makeId(), url: 'img/1.jpg', keywords: ['president', 'funny'] },
-    { id: makeId(), url: 'img/2.jpg', keywords: ['dog', 'cute'] }]
+    { id: makeId(), url: 'img/2.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/3.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/4.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/5.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/6.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/7.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/8.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/9.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/10.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/11.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/12.jpg', keywords: ['dog', 'cute'] },
+]
+
 
 var gMeme = {
     selectedImgId: gImg[0].id,
@@ -10,7 +22,7 @@ var gMeme = {
     lines: [
         {
             number: 1,
-            txt: 'MAGA',
+            txt: 'hahaha',
             size: 20,
             color: 'green'
         }

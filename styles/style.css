@@ -9,6 +9,7 @@
 
 /* COMPONENTS */
 @import url(components/main-header.css);
+@import url(components/gallery.css);
 @import url(components/canvas.css);
 
 /* MQ */

@@ -1,0 +1,10 @@
+.gallery{
+background-color: RGBA(34, 37, 44, 1);
+}
+
+.gallery-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

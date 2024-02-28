@@ -1,7 +1,14 @@
 *{
     box-sizing: border-box;
 }
+/* body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+} */
 
 ul{
     list-style-type: none;
+}
+img{
+width: 263px;
+border-radius: 20px;
 }

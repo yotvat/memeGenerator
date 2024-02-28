@@ -2,7 +2,12 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: cadetblue;
+    background-color: RGBA(89, 112, 193, 1);
+    border-radius: 10px;
+}
+.header-logo{
+height: 1em;
+font-size: 1.4em;
 }
 
 .header-nav{
