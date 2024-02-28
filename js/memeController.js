@@ -16,9 +16,10 @@ function renderMeme() {
     img.src = findImg(currImageId).url
 
 
-    img.onload=()=>
-    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(gMeme.lines[0].txt,100,100)
+    img.onload=()=>{
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+        drawText(gMeme.lines[0].txt,100,100)
+    }
     
 }
 
