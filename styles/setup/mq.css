@@ -3,20 +3,21 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        gap: 10px
+        gap: 10px;
+        margin-left: 20px;
     }
 
 
 
 }
 
-
 @media (width < 1088px) {
     .img-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        gap: 10px
+        gap: 10px;
+        margin-left: 20px;
     }
 
     img {
@@ -29,13 +30,13 @@
     }
 
     .meme-editor {
-        width: 480px;
-        height: 350px;
+        width: 500px;
+        height: 400px;
 
     }
 
     .edit-zone {
-        margin-top: 20px;
+        margin-top: 0px;
     }
 
 
@@ -46,13 +47,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        gap: 10px
+        gap: 10px;
+        margin-left: 20px;
     }
 
 }
 
-
-@media (width < 640px) {
+@media (width < 680px) {
     .img-container {
         display: grid;
         grid-template-columns: 1fr 1fr;

@@ -1,5 +1,3 @@
-
-
 .canvas-container{
 display: flex;
 justify-content: space-around;
@@ -26,7 +24,7 @@ canvas{
 .edit-zone{
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 70px;
     align-items: center;
     gap: 17px;
 }
@@ -38,11 +36,12 @@ canvas{
    width: 447px;
    border-radius: 5px;
    justify-content: center;
-   gap: 32px;
+   gap: 25px;
 }
 
 .advanced-edit .btn{
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .advanced-edit input{
@@ -52,8 +51,11 @@ canvas{
     border-radius: 5px;
     margin-bottom: 5px;
 }
+
 .advanced-edit select{
     margin-bottom: 5px;
     border-radius: 5px;
     border: none;
+    height: 65px;
+    width: 74px;
 }

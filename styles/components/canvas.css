@@ -16,6 +16,7 @@ canvas{
     color: white;
     background-color: #40DE58;
 }
+
 .delete-row-btn{
     color: white;
     background-color: #D42437;
@@ -37,10 +38,12 @@ canvas{
     color: black;
     background-color: whitesmoke;
 }
+
 .font-down{
     color: black;
     background-color: whitesmoke;
 }
+
 .background-img{
     position: absolute;
     top: 0;
@@ -60,3 +63,4 @@ canvas{
     text-align: center;
 
 }
+

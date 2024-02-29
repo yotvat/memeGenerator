@@ -4,22 +4,22 @@ var isDirUp = true
 var gImg =
     [{ id: makeId(), url: 'img/1.jpg', keywords: ['president', 'funny'] },
     { id: makeId(), url: 'img/2.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/3.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/4.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/5.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/6.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/7.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/8.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/9.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/10.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/11.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/12.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/13.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/14.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/15.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/16.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/17.jpg', keywords: ['dog', 'cute'] },
-    { id: makeId(), url: 'img/18.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/3.jpg', keywords: ['dog', 'baby'] },
+    { id: makeId(), url: 'img/4.jpg', keywords: ['cat', 'cute'] },
+    { id: makeId(), url: 'img/5.jpg', keywords: ['baby', 'cute'] },
+    { id: makeId(), url: 'img/6.jpg', keywords: ['aliens', 'funny'] },
+    { id: makeId(), url: 'img/7.jpg', keywords: ['baby', 'cute'] },
+    { id: makeId(), url: 'img/8.jpg', keywords: ['wonka', 'funny'] },
+    { id: makeId(), url: 'img/9.jpg', keywords: ['baby', 'cute'] },
+    { id: makeId(), url: 'img/10.jpg', keywords: ['president', 'funny'] },
+    { id: makeId(), url: 'img/11.jpg', keywords: ['boxer', 'love'] },
+    { id: makeId(), url: 'img/12.jpg', keywords: ['haim', 'scary'] },
+    { id: makeId(), url: 'img/13.jpg', keywords: ['cocktail', 'rich'] },
+    { id: makeId(), url: 'img/14.jpg', keywords: ['glass', 'matrix'] },
+    { id: makeId(), url: 'img/15.jpg', keywords: ['mordor', 'tv'] },
+    { id: makeId(), url: 'img/16.jpg', keywords: ['piccard', 'sci-fi'] },
+    { id: makeId(), url: 'img/17.jpg', keywords: ['president', 'scary'] },
+    { id: makeId(), url: 'img/18.jpg', keywords: ['look', 'toy'] },
     ]
 
 var gMeme = {
@@ -34,8 +34,8 @@ var gMeme = {
             y: null,
             x: null,
             txtWidth: null,
-            align:'center',
-            font:'impact',
+            align: 'center',
+            font: 'impact',
 
 
         }
@@ -62,7 +62,7 @@ function setColorInput(value) {
 }
 
 function setLineTxt(value) {
-    if(!gMeme.lines.length) return
+    if (!gMeme.lines.length) return
     gMeme.lines[gMeme.selectedLineIdx].txt = value
 }
 
@@ -118,21 +118,30 @@ function deleteline() {
 
 }
 
-function alignLeft(){
+function alignLeft() {
     gMeme.lines[gMeme.selectedLineIdx].align = 'right'
-    
+
 }
 
-function alignCenter(){
+function alignCenter() {
     gMeme.lines[gMeme.selectedLineIdx].align = 'center'
-    
+
 }
 
-function alignRight(){
+function alignRight() {
     gMeme.lines[gMeme.selectedLineIdx].align = 'left'
-
 }
 
-function setFont(value){
+function setFont(value) {
     gMeme.lines[gMeme.selectedLineIdx].font = value
 }
+
+
+//NOT WORKING YET
+// function lineUp() {
+//     gMeme.lines[gMeme.selectedLineIdx].y -= 10
+// }
+
+// function lineDown() {
+//     gMeme.lines[gMeme.selectedLineIdx].y += 10
+// }

@@ -2,13 +2,12 @@
 let gElCanvas
 let gCtx
 var SPACING = 60
-var gFilteBy = ''
+// var gFilteBy = ''
 
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     renderGallery()
-    //window.addEventListener('resize', () => resizeCanvas())
 }
 
 function renderMeme() {
@@ -37,7 +36,6 @@ function renderMeme() {
         })
 }
 }
-
 
 function drawText(text, x, y,color = 'black',size = 40,align = 'center',font = 'impact') {
     const meme = getMeme()
@@ -139,9 +137,17 @@ function onSetFont({value}){
 }
 
 
-//function resizeCanvas() {
-    // const elContainer = document.querySelector('.canvas-container')
-    
-    // // Changing the canvas dimension clears the canvas
-    // gElCanvas.width = elContainer.clientWidth
+
+
+
+//NOT WORKING YET
+// function onLineUpClick(){
+//     lineUp()
+//     renderMeme()
 // }
+
+// function onLineDownClick(){
+//     lineDown()
+//     renderMeme()
+// }
+

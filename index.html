@@ -61,13 +61,16 @@
                         <button onclick="onAlignLeftClick()" class="btn fa align-left align-left-btn"></button>
                         <button onclick="onAlignCenterClick()" class="btn fa align-center align-center-btn"></button>
                         <button onclick="onAlignRightClick()" class="btn fa align-right align-right-btn"></button>
+
+                        <button onclick="onLineUpClick()" class="btn fa line-up line-up-btn"></button>
+                        <button onclick="onLineDownClick()" class="btn fa line-down line-down-btn"></button>
                         <select onchange="onSetFont(this)" name="font-select" class="font-select" id="font-select">
                             <option class="impact" value="impact">IMPACT</option>
                             <option class="arial" value="arial">ARIAL</option>
                             <option class="impact" value="verdana">VERDANA</option>
                         </select>
-                        <label id="color"></label>
-                        <input oninput="onColorInput(this)" type="color">
+                        <label class="color-picker-lable" for="color-picker-label" id="color"></label>
+                        <input class="color-picker" id="color-picker" name="color-picker" oninput="onColorInput(this)" type="color">
 
                     </div>
                     <div class="download-share">
@@ -83,7 +86,7 @@
 
     <script src="services/utilService.js"></script>
     <script src="services/storageService.js"></script>
-    <script src="service/shareToFacebook.js"></script>
+    <script src="services/shareToFacebook.js"></script>
     <script src="services/memeService.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>
