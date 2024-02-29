@@ -2,6 +2,7 @@
 let gElCanvas
 let gCtx
 var SPACING = 60
+
 // var gFilteBy = ''
 
 function onInit() {
