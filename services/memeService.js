@@ -24,7 +24,12 @@ var gMeme = {
             number: 1,
             txt: 'hahaha',
             size: 20,
-            color: 'green'
+            color: 'green',
+            y: null,
+            x: null,
+            txtWidth: null,
+
+
         }
     ]
 }
@@ -53,7 +58,6 @@ function setImg(id) {
 }
 
 function addLine() {
-
     const line = {
         number: gMeme.lines.length + 1,
         txt: 'enter text',
@@ -74,7 +78,22 @@ function switchLine() {
     console.log(gMeme.selectedLineIdx)
     renderMeme()
 
+}
 
+function findLine(offsetX, offsetY) {
+    const line = gMeme.lines.find(line => {
+        let { x, y, size, txtWidth } = line
+        if (gCtx.textAlign === 'center') x = x - (txtWidth / 2)
+        // console.log('x,y,offsetX,offsetY', x, y, offsetX, offsetY)
 
+        var currLine = offsetX >= x && offsetX <= (x + txtWidth) &&
+            offsetY >= y - size && offsetY <= y + size + (size / 2)
+        // console.log('currLine', currLine)
+        // console.log('y+size', y + size)
+        return currLine
+    })
+
+    return line
+    
 
 }

@@ -6,7 +6,6 @@ function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     renderGallery()
-
     //window.addEventListener('resize', () => resizeCanvas())
 }
 
@@ -19,17 +18,23 @@ function renderMeme() {
     img.onload=()=>{
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         let y = SPACING
-        meme.lines.forEach((line,idx )=> {
+     meme.lines.forEach((line,idx )=> {
             const meme = getMeme()
-        drawText(line.txt,gElCanvas.width / 2, y)
-        let txtWidth = gCtx.measureText(line.txt).width
-        line.txtWidth = txtWidth
-        line.y = y
-        line.x = gElCanvas.width / 2
-        if(meme.selectedLineIdx===idx)drawFrame(line.x,y,txtWidth,line.size)
-        y+=SPACING
+            drawText(line.txt,gElCanvas.width / 2, y)
 
-    })
+            let txtWidth = gCtx.measureText(line.txt).width
+            line.txtWidth = txtWidth
+
+            line.y = y
+            line.x = gElCanvas.width / 2
+            // line.x = gElCanvas.width
+            if(meme.selectedLineIdx===idx){
+                drawFrame(gElCanvas.width / 2,y,txtWidth,line.size)
+            }
+
+            y+=SPACING
+
+        })
 }
 }
 
@@ -45,7 +50,7 @@ function drawText(text, x, y) {
 
 	gCtx.fillStyle = meme.lines[meme.selectedLineIdx].color
 
-	gCtx.font = meme.lines[meme.selectedLineIdx].size +'px' + ' impact'
+	gCtx.font = meme.lines[meme.selectedLineIdx].size +'px'+ ' impact'
 	gCtx.textAlign = 'center'
 	gCtx.textBaseline = 'middle'
 
@@ -93,19 +98,15 @@ function drawFrame(x,y,txtWidth,size){
     gCtx.setLineDash([4,10])
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
-    gCtx.strokeRect(x - 5 - (txtWidth / 2) ,y-size+8,txtWidth+8,size+5)
+    gCtx.strokeRect(x - 5 - (txtWidth / 2) ,y - size, txtWidth + 8 ,size+size)
     gCtx.setLineDash([])
 }
 
 function onLineClick(ev){
-   var x = ev.offsetX
-   var y = ev.offsetY
-    const currLine = gMeme.lines.find(line => {
-        const {x,y,size,txtWidth} = line
-       return ev.offsetX >= x - 5 - (txtWidth / 2) && ev.offsetX <= x  + (txtWidth / 2) + 5 &&
-       ev.offsetY >= y && ev.offsetY <= y + size
-    })
-    console.log('currLine',currLine)
+    const {offsetX,offsetY,clientX,clientY} = ev
+     var line = findLine(offsetX,offsetY)
+     console.log(line)
+
 }
 
 //function resizeCanvas() {
