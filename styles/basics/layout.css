@@ -1,9 +1,4 @@
-.img-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr ;
-    gap: 5px;
-}
+
 
 .canvas-container{
 display: flex;
@@ -21,7 +16,7 @@ canvas{
 
 .meme-editor{
     /* position: absolute; */
-    background-color: RGBA(34, 37, 44, 1);
+    background-color: #383B42;
     width: 528px;
     height: 549px;
     text-align: center;
@@ -31,7 +26,7 @@ canvas{
 .edit-zone{
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
+    margin-top: 140px;
     align-items: center;
     gap: 17px;
 }

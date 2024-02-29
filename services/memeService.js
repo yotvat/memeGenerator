@@ -1,5 +1,6 @@
 'use strict'
 
+var isDirUp = true
 var gImg =
     [{ id: makeId(), url: 'img/1.jpg', keywords: ['president', 'funny'] },
     { id: makeId(), url: 'img/2.jpg', keywords: ['dog', 'cute'] },
@@ -13,9 +14,14 @@ var gImg =
     { id: makeId(), url: 'img/10.jpg', keywords: ['dog', 'cute'] },
     { id: makeId(), url: 'img/11.jpg', keywords: ['dog', 'cute'] },
     { id: makeId(), url: 'img/12.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/13.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/14.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/15.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/16.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/17.jpg', keywords: ['dog', 'cute'] },
+    { id: makeId(), url: 'img/18.jpg', keywords: ['dog', 'cute'] },
     ]
-
-
+    
 var gMeme = {
     selectedImgId: gImg[0].id,
     selectedLineIdx: 0,
@@ -33,7 +39,7 @@ var gMeme = {
         }
     ]
 }
-var isDirUp = true
+
 var gKeywordSearchCountMap = { 'funny': 4, 'presiden': 2 }
 
 function getImg() {
@@ -47,6 +53,11 @@ function findImg(id) {
 
 function getMeme() {
     return gMeme
+}
+
+function setColorInput(value){
+    gMeme.lines[gMeme.selectedLineIdx].color = value
+    console.log('gMeme.lines',gMeme.lines)
 }
 
 function setLineTxt(value) {
@@ -65,9 +76,6 @@ function addLine() {
         color: 'green'
     }
     gMeme.lines.push(line)
-    console.log(gMeme.lines)
-
-
 }
 
 function switchLine() {
@@ -76,7 +84,6 @@ function switchLine() {
     else gMeme.selectedLineIdx--
     if (gMeme.selectedLineIdx === gMeme.lines.length - 1) isDirUp = false
     if (gMeme.selectedLineIdx === 0) isDirUp = true
-    console.log(gMeme.selectedLineIdx)
     renderMeme()
 
 }
@@ -90,4 +97,8 @@ function findLine(offsetX, offsetY) {
             offsetY >= y - size && offsetY <= y + size + (size / 2)
     })
     if (idx !== -1) gMeme.selectedLineIdx = idx
+}
+
+function deleteline(){
+    gMeme.lines.pop()
 }

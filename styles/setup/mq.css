@@ -1,0 +1,51 @@
+@media(width>1087px) {
+    .img-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px
+    }
+
+
+
+}
+
+ /* desktop */
+
+
+@media (width < 1088px) {
+    img {
+        width: 200px;
+    }
+.canvas-container{
+    display: grid;
+    margin-top: 30px;
+}
+
+.meme-editor{
+    width: 480px;
+    height: 350px;
+
+}
+.edit-zone{
+    margin-top: 20px;
+}
+
+
+}
+
+
+@media (width < 640px){
+    .img-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+    
+    /* img {
+        width: 200px;
+    } */
+
+
+
+} 

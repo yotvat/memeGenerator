@@ -20,14 +20,13 @@ function renderMeme() {
         let y = SPACING
      meme.lines.forEach((line,idx )=> {
             const meme = getMeme()
-            drawText(line.txt,gElCanvas.width / 2, y)
+            drawText(line.txt,gElCanvas.width / 2, y )
 
             let txtWidth = gCtx.measureText(line.txt).width
             line.txtWidth = txtWidth
 
             line.y = y
             line.x = gElCanvas.width / 2
-            // line.x = gElCanvas.width
             if(meme.selectedLineIdx===idx){
                 drawFrame(gElCanvas.width / 2,y,txtWidth,line.size)
             }
@@ -66,8 +65,7 @@ function downloadCanvas(elLink) {
 }
 
 function onColorInput({value}){
-    const meme = getMeme()
-    meme.lines[meme.selectedLineIdx].color = value
+    setColorInput(value)
     renderMeme()
 }
 
@@ -108,6 +106,11 @@ function onLineClick(ev){
      renderMeme()
 
 
+}
+
+function onDeleteLineClick(){
+    deleteline()
+    renderMeme()
 }
 
 //function resizeCanvas() {

@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mister Generator</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body onload="onInit()">
     <header>
         <logo class="header-logo"><span>
-                meme generator
+                Mister Generator
             </span>
         </logo>
         <nav>
             <ul class="header-nav">
-                <li>gallery</li>
+                <li onclick="onGalleryClick()">gallery</li>
                 <li>about</li>
             </ul>
         </nav>
@@ -27,8 +27,8 @@
         <div class="gallery-actions">
             <div class="search-container">
                 <label id="search"></label>
-                <input type="text">
-                <button class="btn search-btn">search</button>
+                <input type="text" placeholder="Search...">
+                <button class="btn fa search search-btn"></button>
             </div>
             <div class="keywords-dispaly">
                 <label id="keywords-dispaly"></label>
@@ -40,6 +40,7 @@
     </section>
 
     <section class="editor hidden">
+        <img class="background-img" src="img/Forme 1.png" alt="">
         <div class="canvas-container">
             <canvas onclick="onLineClick(event)" width="500" height="500">
 
@@ -50,13 +51,13 @@
                     <input oninput="onSetLineChange(this)" name="txt-canvas" class="txt-canvas" type="text"
                         placeholder="insert text to use...">
                     <div class="rows-btn">
-                        <button onclick="onSwitchLineClick()" class="btn switch-row-btn">switch</button>
-                        <button onclick="onAddLineClick()" class="btn add-row-btn">add</button>
-                        <button class="btn delete-row-btn">delete</button>
+                        <button onclick="onSwitchLineClick()" class="btn fa arrows switch-row-btn"></button>
+                        <button onclick="onAddLineClick()" class="btn fa plus add-row-btn"></button>
+                        <button onclick="onDeleteLineClick()" class="btn fa trash delete-row-btn"></button>
                     </div>
                     <div class="advanced-edit">
-                        <button onclick="onFontUpClick()" class="btn font-up-btn">+</button>
-                        <button onclick="onFontDownClick()" class="btn font-down-btn">-</button>
+                        <button onclick="onFontUpClick()" class="btn fa font-up font-up-btn"></button>
+                        <button onclick="onFontDownClick()" class="btn fa font-down font-down-btn"></button>
                         <button class="btn align-left-btn">left</button>
                         <button class="btn align-center-btn">center</button>
                         <button class="btn align-right-btn">right</button>
@@ -64,8 +65,8 @@
                         <input oninput="onColorInput(this)" type="color">
                     </div>
                     <div class="download-share">
-                        <button class="btn download-btn"><a href="#" onclick="downloadCanvas(this)" download="file-name">download</a></button>
-                        <button class="btn share-btn">share</button>
+                        <button class="btn fa download download-btn"><a href="#" onclick="downloadCanvas(this)" download="file-name"></a></button>
+                        <button class="btn fa share share-btn"></button>
                     </div>
                 </div>
             </div>

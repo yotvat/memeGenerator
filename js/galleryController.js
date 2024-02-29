@@ -15,3 +15,8 @@ function onImgClick(elImg) {
     document.querySelector('.editor').classList.remove('hidden')
     renderMeme()
 }
+
+function onGalleryClick(){
+    document.querySelector('.gallery').classList.remove('hidden')
+    document.querySelector('.editor').classList.add('hidden')
+}
