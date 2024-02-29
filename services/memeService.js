@@ -97,6 +97,7 @@ function findLine(offsetX, offsetY) {
             offsetY >= y - size && offsetY <= y + size + (size / 2)
     })
     if (idx !== -1) gMeme.selectedLineIdx = idx
+    return idx
 }
 
 function deleteline(){

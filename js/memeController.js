@@ -101,9 +101,12 @@ function drawFrame(x,y,txtWidth,size){
 }
 
 function onLineClick(ev){
-    const {offsetX,offsetY,clientX,clientY} = ev
-     var line = findLine(offsetX,offsetY)
-     renderMeme()
+    const meme = getMeme()
+    const {offsetX,offsetY,clientX,clientY,value} = ev
+     var lineIdx = findLine(offsetX,offsetY)
+    renderMeme()
+    if (lineIdx===-1) return;
+      else document.querySelector('.txt-canvas').value = meme.lines[lineIdx].txt
 
 
 }
