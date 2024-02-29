@@ -23,6 +23,7 @@ canvas{
 }
 
 .download-btn{
+    cursor: pointer;
     color: white;
     background-color: #1E7CD3;
 }

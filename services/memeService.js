@@ -29,7 +29,7 @@ var gMeme = {
         {
             number: 1,
             txt: 'hahaha',
-            size: 30,
+            size: 40,
             color: 'black',
             y: null,
             x: null,
@@ -74,7 +74,7 @@ function addLine() {
     const line = {
         number: gMeme.lines.length + 1,
         txt: 'enter text',
-        size: 30,
+        size: 40,
         color: 'black'
     }
     gMeme.lines.push(line)
@@ -119,7 +119,7 @@ function deleteline() {
 }
 
 function alignLeft(){
-    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
     
 }
 
@@ -129,7 +129,7 @@ function alignCenter(){
 }
 
 function alignRight(){
-    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
 
 }
 

@@ -40,3 +40,20 @@ canvas{
    justify-content: center;
    gap: 32px;
 }
+
+.advanced-edit .btn{
+    margin-top: 10px;
+}
+
+.advanced-edit input{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.advanced-edit select{
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+}
