@@ -105,7 +105,8 @@ function drawFrame(x,y,txtWidth,size){
 function onLineClick(ev){
     const {offsetX,offsetY,clientX,clientY} = ev
      var line = findLine(offsetX,offsetY)
-     console.log(line)
+     renderMeme()
+
 
 }
 

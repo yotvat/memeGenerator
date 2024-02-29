@@ -69,6 +69,7 @@ function addLine() {
 
 
 }
+
 function switchLine() {
     if (gMeme.lines.length <= 1) return
     if (isDirUp) gMeme.selectedLineIdx++
@@ -81,19 +82,12 @@ function switchLine() {
 }
 
 function findLine(offsetX, offsetY) {
-    const line = gMeme.lines.find(line => {
+    const idx = gMeme.lines.findIndex(line => {
         let { x, y, size, txtWidth } = line
         if (gCtx.textAlign === 'center') x = x - (txtWidth / 2)
         // console.log('x,y,offsetX,offsetY', x, y, offsetX, offsetY)
-
-        var currLine = offsetX >= x && offsetX <= (x + txtWidth) &&
+        return offsetX >= x && offsetX <= (x + txtWidth) &&
             offsetY >= y - size && offsetY <= y + size + (size / 2)
-        // console.log('currLine', currLine)
-        // console.log('y+size', y + size)
-        return currLine
     })
-
-    return line
-    
-
+    if (idx !== -1) gMeme.selectedLineIdx = idx
 }
