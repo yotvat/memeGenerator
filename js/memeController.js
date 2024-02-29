@@ -2,6 +2,8 @@
 let gElCanvas
 let gCtx
 var SPACING = 60
+var gFilteBy = ''
+
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
@@ -20,7 +22,7 @@ function renderMeme() {
         let y = SPACING
      meme.lines.forEach((line,idx )=> {
             const meme = getMeme()
-            drawText(line.txt,gElCanvas.width / 2, y )
+            drawText(line.txt,gElCanvas.width / 2, y, line.color,line.size )
 
             let txtWidth = gCtx.measureText(line.txt).width
             line.txtWidth = txtWidth
@@ -32,29 +34,29 @@ function renderMeme() {
             }
 
             y+=SPACING
-
         })
 }
+}
+
+
+function drawText(text, x, y,color = 'green',size = 20) {
+    const meme = getMeme()
+	gCtx.lineWidth = 2
+	gCtx.strokeStyle = 'black'
+    
+	gCtx.fillStyle = color
+    
+	gCtx.font = size +'px'+ ' impact'
+	gCtx.textAlign = 'center'
+	gCtx.textBaseline = 'middle'
+    
+	gCtx.fillText(text, x, y)
+	gCtx.strokeText(text, x, y)
 }
 
 function onSetLineChange({value}){
     setLineTxt(value)
     renderMeme()
-}
-
-function drawText(text, x, y) {
-    const meme = getMeme()
-	gCtx.lineWidth = 2
-	gCtx.strokeStyle = 'black'
-
-	gCtx.fillStyle = meme.lines[meme.selectedLineIdx].color
-
-	gCtx.font = meme.lines[meme.selectedLineIdx].size +'px'+ ' impact'
-	gCtx.textAlign = 'center'
-	gCtx.textBaseline = 'middle'
-
-	gCtx.fillText(text, x, y)
-	gCtx.strokeText(text, x, y)
 }
 
 function downloadCanvas(elLink) {
@@ -70,14 +72,12 @@ function onColorInput({value}){
 }
 
 function onFontUpClick(){
-    const meme = getMeme()
-    meme.lines[meme.selectedLineIdx].size +=5
+    fontUpClick()
     renderMeme()
 }
 
 function onFontDownClick(){
-    const meme = getMeme()
-    meme.lines[meme.selectedLineIdx].size -=5
+    FontDownClick()
     renderMeme()
 }
 

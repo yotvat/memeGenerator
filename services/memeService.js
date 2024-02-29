@@ -21,7 +21,7 @@ var gImg =
     { id: makeId(), url: 'img/17.jpg', keywords: ['dog', 'cute'] },
     { id: makeId(), url: 'img/18.jpg', keywords: ['dog', 'cute'] },
     ]
-    
+
 var gMeme = {
     selectedImgId: gImg[0].id,
     selectedLineIdx: 0,
@@ -55,9 +55,8 @@ function getMeme() {
     return gMeme
 }
 
-function setColorInput(value){
+function setColorInput(value) {
     gMeme.lines[gMeme.selectedLineIdx].color = value
-    console.log('gMeme.lines',gMeme.lines)
 }
 
 function setLineTxt(value) {
@@ -76,6 +75,14 @@ function addLine() {
         color: 'green'
     }
     gMeme.lines.push(line)
+}
+
+function fontUpClick() {
+    gMeme.lines[gMeme.selectedLineIdx].size += 5
+}
+
+function FontDownClick() {
+    gMeme.lines[gMeme.selectedLineIdx].size -= 5
 }
 
 function switchLine() {
@@ -100,6 +107,15 @@ function findLine(offsetX, offsetY) {
     return idx
 }
 
-function deleteline(){
+function deleteline() {
+    console.log('gMeme.lines', gMeme.lines)
+    if (!gMeme.lines) return
+if(gMeme.lines.length === 2){
     gMeme.lines.pop()
+    return
+} 
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx++
+    else gMeme.selectedLineIdx--
+
 }
