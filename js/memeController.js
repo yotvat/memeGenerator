@@ -22,7 +22,7 @@ function renderMeme() {
         let y = SPACING
      meme.lines.forEach((line,idx )=> {
             const meme = getMeme()
-            drawText(line.txt,gElCanvas.width / 2, y, line.color,line.size )
+            drawText(line.txt,gElCanvas.width / 2, y, line.color,line.size ,line.align,line.font)
 
             let txtWidth = gCtx.measureText(line.txt).width
             line.txtWidth = txtWidth
@@ -39,15 +39,15 @@ function renderMeme() {
 }
 
 
-function drawText(text, x, y,color = 'green',size = 20) {
+function drawText(text, x, y,color = 'black',size = 30,align = 'center',font = 'impact') {
     const meme = getMeme()
 	gCtx.lineWidth = 2
 	gCtx.strokeStyle = 'black'
     
 	gCtx.fillStyle = color
     
-	gCtx.font = size +'px'+ ' impact'
-	gCtx.textAlign = 'center'
+	gCtx.font = size +'px'+ ` ${font}`
+	gCtx.textAlign = align
 	gCtx.textBaseline = 'middle'
     
 	gCtx.fillText(text, x, y)
@@ -82,7 +82,6 @@ function onFontDownClick(){
 }
 
 function onAddLineClick(){
-    const meme = getMeme()
     addLine()
     renderMeme()
 }
@@ -96,7 +95,8 @@ function drawFrame(x,y,txtWidth,size){
     gCtx.setLineDash([4,10])
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
-    gCtx.strokeRect(x - 5 - (txtWidth / 2) ,y - size, txtWidth + 8 ,size+size)
+    // gCtx.strokeRect(x - 5 - (txtWidth / 2) ,y - size, txtWidth + 8 ,size+size)
+    gCtx.strokeRect(x - 15 - (txtWidth / 2) ,y - size, txtWidth + 28 ,size+size)
     gCtx.setLineDash([])
 }
 
@@ -115,6 +115,27 @@ function onDeleteLineClick(){
     deleteline()
     renderMeme()
 }
+
+function onAlignLeftClick(){
+alignLeft()
+renderMeme()
+
+}
+function onAlignCenterClick(){
+alignCenter()
+renderMeme()
+
+}
+function onAlignRightClick(){
+alignRight()
+renderMeme()
+}
+
+function onSetFont({value}){
+    setFont(value)
+    renderMeme()
+}
+
 
 //function resizeCanvas() {
     // const elContainer = document.querySelector('.canvas-container')

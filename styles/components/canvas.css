@@ -48,3 +48,14 @@ canvas{
     opacity: 0.4;
 
 }
+
+.txt-canvas{
+    margin-top: 6px;
+    background: #e6e7e8;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+
+}

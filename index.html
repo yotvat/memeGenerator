@@ -58,15 +58,22 @@
                     <div class="advanced-edit">
                         <button onclick="onFontUpClick()" class="btn fa font-up font-up-btn"></button>
                         <button onclick="onFontDownClick()" class="btn fa font-down font-down-btn"></button>
-                        <button class="btn align-left-btn">left</button>
-                        <button class="btn align-center-btn">center</button>
-                        <button class="btn align-right-btn">right</button>
+                        <button onclick="onAlignLeftClick()" class="btn fa align-left align-left-btn"></button>
+                        <button onclick="onAlignCenterClick()" class="btn fa align-center align-center-btn"></button>
+                        <button onclick="onAlignRightClick()" class="btn fa align-right align-right-btn"></button>
+                        <select onchange="onSetFont(this)" name="font-select" class="font-select" id="font-select">
+                            <option class="impact" value="impact">IMPACT</option>
+                            <option class="arial" value="arial">ARIAL</option>
+                            <option class="impact" value="verdana">VERDANA</option>
+                        </select>
                         <label id="color"></label>
                         <input oninput="onColorInput(this)" type="color">
+
                     </div>
                     <div class="download-share">
-                        <button class="btn fa download download-btn"><a href="#" onclick="downloadCanvas(this)" download="file-name"></a></button>
-                        <button class="btn fa share share-btn"></button>
+                        <button class="btn fa download download-btn"><a href="#" onclick="downloadCanvas(this)"
+                                download="file-name"></a></button>
+                        <button onclick="onUploadImg()" class="btn fa share share-btn"></button>
                     </div>
                 </div>
             </div>
@@ -77,6 +84,7 @@
 
     <script src="services/utilService.js"></script>
     <script src="services/storageService.js"></script>
+    <script src="service/shareToFacebook.js"></script>
     <script src="services/memeService.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>

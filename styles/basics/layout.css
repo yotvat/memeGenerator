@@ -26,13 +26,14 @@ canvas{
 .edit-zone{
     display: flex;
     flex-direction: column;
-    margin-top: 140px;
+    margin-top: 100px;
     align-items: center;
     gap: 17px;
 }
 
 .advanced-edit{
     display: flex;
+    flex-wrap: wrap;
    background-color: RGBA(25, 165, 159, 1);
    width: 447px;
    border-radius: 5px;

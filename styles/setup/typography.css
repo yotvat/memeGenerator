@@ -44,3 +44,16 @@
     font-size: 1.5em;
     content: "\f002 ";
 }
+.fa.align-left::before {
+    font-size: 2em;
+    content: "\f036 ";
+}
+.fa.align-center::before {
+    font-size: 2em;
+    content: "\f039 ";
+}
+.fa.align-right::before {
+    font-size: 2em;
+    content: "\f038 ";
+}
+

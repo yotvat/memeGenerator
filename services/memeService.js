@@ -29,11 +29,13 @@ var gMeme = {
         {
             number: 1,
             txt: 'hahaha',
-            size: 20,
-            color: 'green',
+            size: 30,
+            color: 'black',
             y: null,
             x: null,
             txtWidth: null,
+            align:'center',
+            font:'impact',
 
 
         }
@@ -60,6 +62,7 @@ function setColorInput(value) {
 }
 
 function setLineTxt(value) {
+    if(!gMeme.lines.length) return
     gMeme.lines[gMeme.selectedLineIdx].txt = value
 }
 
@@ -71,8 +74,8 @@ function addLine() {
     const line = {
         number: gMeme.lines.length + 1,
         txt: 'enter text',
-        size: 20,
-        color: 'green'
+        size: 30,
+        color: 'black'
     }
     gMeme.lines.push(line)
 }
@@ -108,14 +111,28 @@ function findLine(offsetX, offsetY) {
 }
 
 function deleteline() {
-    console.log('gMeme.lines', gMeme.lines)
     if (!gMeme.lines) return
-if(gMeme.lines.length === 2){
-    gMeme.lines.pop()
-    return
-} 
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx++
     else gMeme.selectedLineIdx--
 
+}
+
+function alignLeft(){
+    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+    
+}
+
+function alignCenter(){
+    gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+    
+}
+
+function alignRight(){
+    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+
+}
+
+function setFont(value){
+    gMeme.lines[gMeme.selectedLineIdx].font = value
 }
