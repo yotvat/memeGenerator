@@ -1,4 +1,4 @@
-/* NEED CHANGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
 @font-face {
     font-family: fa;
     src: url("../../fonts/fa-solid-900.ttf");
@@ -7,7 +7,7 @@
 .fa::before {
     font-family: fa;
 }
-/* EXAPMLES!!!!!!!!!!!!!!!! */
+
 .fa.arrows::before {
     content: "\e4af";
     font-size: 2em;
@@ -44,9 +44,3 @@
     font-size: 1.5em;
     content: "\f002 ";
 }
-
-/* arrows - e4af */
-/*plus -2b  */
-/* trash - f2ed */
-/* share - f1e0 */
-/* download - f56d */
