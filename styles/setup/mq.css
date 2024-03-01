@@ -45,6 +45,36 @@
         display: none;
     }
 
+
+    .edit-zone {
+        gap: 9px;
+
+    }
+
+    .rows-btn .btn {
+        width: 54px;
+        height: 46px;
+    }
+
+    .advanced-edit {
+        width: 425px;
+    }
+
+    .advanced-edit .btn {
+        margin-top: 6px;
+        width: 54px;
+        height: 46px;
+    }
+
+    .advanced-edit .download-btn {
+        width: 54px;
+        height: 46px;
+    }
+
+    .advanced-edit select {
+        height: 52px;
+    }
+
 }
 
 @media (width < 860px) {
@@ -59,6 +89,7 @@
     .toggle-menu-btn {
         display: none;
     }
+
 }
 
 @media (width < 882px) {
@@ -95,11 +126,12 @@
         border-bottom: 1px solid #ccc;
         text-align: center;
     }
+
     .toggle-menu-btn {
         display: block;
     }
-    img{
-        width: 150px;
-    }
 
+    img {
+        width: 130px;
+    }
 }

@@ -13,7 +13,7 @@ var gImg =
     { id: makeId(), url: 'img/9.jpg', keywords: ['baby', 'cute'] },
     { id: makeId(), url: 'img/10.jpg', keywords: ['president', 'funny'] },
     { id: makeId(), url: 'img/11.jpg', keywords: ['boxer', 'love'] },
-    { id: makeId(), url: 'img/12.jpg', keywords: ['haim', 'scary'] },
+    { id: makeId(), url: 'img/12.jpg', keywords: ['Haim', 'scary'] },
     { id: makeId(), url: 'img/13.jpg', keywords: ['cocktail', 'rich'] },
     { id: makeId(), url: 'img/14.jpg', keywords: ['glass', 'matrix'] },
     { id: makeId(), url: 'img/15.jpg', keywords: ['mordor', 'tv'] },
@@ -36,11 +36,37 @@ var gMeme = {
             txtWidth: null,
             align: 'center',
             font: 'impact',
-
+            isDrag: false,
 
         }
     ]
 }
+
+//DRAG AND DROP
+// function isLineClick({ x:offsetX, y:offsetY }) {
+//     const line = gMeme.lines[gMeme.selectedLineIdx]
+//     const { x, y } = line
+
+//     const isInside =
+//         offsetX >= x && offsetX <= (x + line.txtWidth) &&
+//         offsetY >= y - line.size && offsetY <= y + line.size + (line.size / 2)
+
+//     // console.log('x',x,'y',y,'offsetX',offsetX,'offsetY',offsetY)
+
+//     return isInside
+// }
+
+// function setLineDrag(isDrag) {
+//     gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
+// }
+
+// function moveLine(dx, dy) {
+//     gMeme.lines[gMeme.selectedLineIdx].x += dx
+//     gMeme.lines[gMeme.selectedLineIdx].y += dy
+// }
+// //////
+
+
 
 var gKeywordSearchCountMap = { 'funny': 4, 'presiden': 2 }
 
@@ -75,7 +101,13 @@ function addLine() {
         number: gMeme.lines.length + 1,
         txt: 'enter text',
         size: 40,
-        color: 'black'
+        color: 'black',
+        y: null,
+        x: null,
+        txtWidth: null,
+        align: 'center',
+        font: 'impact',
+        isDrag: false,
     }
     gMeme.lines.push(line)
 }
@@ -102,7 +134,7 @@ function findLine(offsetX, offsetY) {
     const idx = gMeme.lines.findIndex(line => {
         let { x, y, size, txtWidth } = line
         if (gCtx.textAlign === 'center') x = x - (txtWidth / 2)
-        // console.log('x,y,offsetX,offsetY', x, y, offsetX, offsetY)
+
         return offsetX >= x && offsetX <= (x + txtWidth) &&
             offsetY >= y - size && offsetY <= y + size + (size / 2)
     })

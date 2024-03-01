@@ -3,6 +3,10 @@ canvas{
 
 }
 
+/* canvas:hover{
+    cursor: default;
+} */
+
 .canvas-container{
     margin-top: 100px;
 }
