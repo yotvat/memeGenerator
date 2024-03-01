@@ -9,17 +9,21 @@
 </head>
 
 <body onload="onInit()">
+
+    <div class="main-screen" onclick="toggleMenu()"></div>
+
     <header>
         <logo class="header-logo"><span>
                 Mister Generator
             </span>
         </logo>
-        <nav>
+        <nav class="main-nav">
             <ul class="header-nav">
                 <li onclick="onGalleryClick()">Gallery</li>
                 <li>About</li>
             </ul>
         </nav>
+        <button class="toggle-menu-btn" onclick="toggleMenu()">☰</button>
     </header>
 
 

@@ -53,3 +53,14 @@ background-color: #383B42
     background: none;
     border: none;
 }
+
+.toggle-menu-btn{
+    background-color: #89d8d3;
+    background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    border: none;
+    border-radius: 20px;
+    width: 45px;
+    height: 35px;
+    font-size: 1em;
+    color: white;
+}

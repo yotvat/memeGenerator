@@ -19,4 +19,11 @@ function onImgClick(elImg) {
 function onGalleryClick(){
     document.querySelector('.gallery').classList.remove('hidden')
     document.querySelector('.editor').classList.add('hidden')
+    document.querySelector('.main-screen').style.opacity = '1'
+    document.body.classList.remove('menu-open')
+
+}
+
+function toggleMenu(){
+    document.body.classList.toggle('menu-open')
 }
