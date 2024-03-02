@@ -9,34 +9,32 @@ function renderGallery() {
 }
 
 function onImgClick(elImg) {
-    // console.log(elImg.naturalHeight)
     setImg(elImg.id)
     document.querySelector('.gallery').classList.add('hidden')
     document.querySelector('.editor').classList.remove('hidden')
     renderMeme()
 }
 
-function onGalleryClick(){
-    
+function onGalleryClick() {
     document.querySelector('.gallery').classList.remove('hidden')
     document.querySelector('.editor').classList.add('hidden')
     document.body.classList.remove('menu-open')
-    
+
 }
 
-function toggleMenu(){
+function toggleMenu() {
     document.body.classList.toggle('menu-open')
 }
 
-function onFlexibleClick(){
+function onFlexibleClick() {
     document.querySelector('.gallery').classList.add('hidden')
     document.querySelector('.editor').classList.remove('hidden')
 
     const img = getImg()
     const meme = getMeme()
-    const idx = getRandomInt(0,19)
+    const idx = getRandomInt(0, 19)
     img[idx]
     setImg(img[idx].id)
-    meme.lines[meme.selectedLineIdx].txt = img[idx].keywords[getRandomInt(0,2)]
+    meme.lines[meme.selectedLineIdx].txt = img[idx].keywords[getRandomInt(0, 2)]
     renderMeme()
 }

@@ -5,7 +5,6 @@ var SPACING = 60
 let gStartPos
 const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
 
-// var gFilteBy = ''
 
 function onInit() {
     gElCanvas = document.querySelector('canvas')
@@ -22,29 +21,20 @@ function renderMeme() {
 
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        // let y = SPACING
         meme.lines.forEach((line, idx) => {
             let x = line.x
             let y = line.y
-            if (x === null && y === null){
+            if (x === null && y === null) {
                 x = 250
                 y = 300
             }
-                // drawText(line.txt, gElCanvas.width / 2, y, line.color, line.size, line.align, line.font)
-                drawText(line.txt, x, y, line.color, line.size, line.align, line.font)
-
-
+            drawText(line.txt, x, y, line.color, line.size, line.align, line.font)
             let txtWidth = gCtx.measureText(line.txt).width
             line.txtWidth = txtWidth
-            
-            // line.y = y
-            // line.x = gElCanvas.width / 2
+
             if (meme.selectedLineIdx === idx) {
                 drawFrame(line.x, line.y, line.txtWidth, line.size)
-            
             }
-
-            // y += SPACING
         })
     }
 }
@@ -105,7 +95,6 @@ function drawFrame(x, y, txtWidth, size) {
     gCtx.setLineDash([4, 10])
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
-    // gCtx.strokeRect(x - 5 - (txtWidth / 2) ,y - size, txtWidth + 8 ,size+size)
     gCtx.strokeRect(x - 15 - (txtWidth / 2), y - size, txtWidth + 28, size + size)
     gCtx.setLineDash([])
 }
@@ -221,12 +210,12 @@ function getEvPos(ev) {
     return pos
 }
 
-function onLineUpClick(){
+function onLineUpClick() {
     lineUp()
     renderMeme()
 }
 
-function onLineDownClick(){
+function onLineDownClick() {
     lineDown()
     renderMeme()
 }

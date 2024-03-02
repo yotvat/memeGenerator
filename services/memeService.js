@@ -42,32 +42,6 @@ var gMeme = {
     ]
 }
 
-//DRAG AND DROP
-function isLineClick({ x: offsetX, y: offsetY }) {
-    const line = gMeme.lines[gMeme.selectedLineIdx]
-    const { x, y } = line
-
-    const isInside =
-        offsetX >= x - 15 - (line.txtWidth / 2) && offsetX <= (x + line.txtWidth / 2) + 14 &&
-        offsetY >= y - line.size && offsetY <= y + line.size
-
-
-    return isInside
-}
-
-function setLineDrag(isDrag) {
-    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
-}
-
-function moveLine(dx, dy) {
-    var line = gMeme.lines[gMeme.selectedLineIdx]
-    line.x += dx
-    line.y += dy
-}
-//////
-
-
-
 var gKeywordSearchCountMap = { 'funny': 4, 'presiden': 2 }
 
 function getImg() {
@@ -168,8 +142,30 @@ function setFont(value) {
     gMeme.lines[gMeme.selectedLineIdx].font = value
 }
 
+//DRAG AND DROP
+function isLineClick({ x: offsetX, y: offsetY }) {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    const { x, y } = line
 
-// NOT WORKING YET
+    const isInside =
+        offsetX >= x - 15 - (line.txtWidth / 2) && offsetX <= (x + line.txtWidth / 2) + 14 &&
+        offsetY >= y - line.size && offsetY <= y + line.size
+
+
+    return isInside
+}
+
+function setLineDrag(isDrag) {
+    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
+}
+
+function moveLine(dx, dy) {
+    var line = gMeme.lines[gMeme.selectedLineIdx]
+    line.x += dx
+    line.y += dy
+}
+//////
+
 function lineUp() {
     gMeme.lines[gMeme.selectedLineIdx].y -= 10
 }
