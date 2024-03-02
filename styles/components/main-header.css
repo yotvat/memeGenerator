@@ -12,6 +12,7 @@ header {
     height: 1em;
     font-size: 1.4em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: -7px;
 }
 
 .header-nav {

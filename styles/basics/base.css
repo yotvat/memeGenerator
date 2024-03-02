@@ -39,3 +39,8 @@ a{
     border: 1px;
     border-radius: 5px;
 }
+
+.download-share{
+    display: flex;
+    gap: 17px;
+}
