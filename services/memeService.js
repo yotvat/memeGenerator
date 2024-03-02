@@ -31,8 +31,8 @@ var gMeme = {
             txt: 'hahaha',
             size: 40,
             color: 'black',
-            y: null,
-            x: null,
+            y: 60,
+            x: 250,
             txtWidth: null,
             align: 'center',
             font: 'impact',
@@ -43,28 +43,28 @@ var gMeme = {
 }
 
 //DRAG AND DROP
-// function isLineClick({ x:offsetX, y:offsetY }) {
-//     const line = gMeme.lines[gMeme.selectedLineIdx]
-//     const { x, y } = line
+function isLineClick({ x: offsetX, y: offsetY }) {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    const { x, y } = line
 
-//     const isInside =
-//         offsetX >= x && offsetX <= (x + line.txtWidth) &&
-//         offsetY >= y - line.size && offsetY <= y + line.size + (line.size / 2)
+    const isInside =
+        offsetX >= x - 15 - (line.txtWidth / 2) && offsetX <= (x + line.txtWidth / 2) + 14 &&
+        offsetY >= y - line.size && offsetY <= y + line.size
 
-//     // console.log('x',x,'y',y,'offsetX',offsetX,'offsetY',offsetY)
 
-//     return isInside
-// }
+    return isInside
+}
 
-// function setLineDrag(isDrag) {
-//     gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
-// }
+function setLineDrag(isDrag) {
+    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
+}
 
-// function moveLine(dx, dy) {
-//     gMeme.lines[gMeme.selectedLineIdx].x += dx
-//     gMeme.lines[gMeme.selectedLineIdx].y += dy
-// }
-// //////
+function moveLine(dx, dy) {
+    var line = gMeme.lines[gMeme.selectedLineIdx]
+    line.x += dx
+    line.y += dy
+}
+//////
 
 
 
@@ -102,8 +102,8 @@ function addLine() {
         txt: 'enter text',
         size: 40,
         color: 'black',
-        y: null,
-        x: null,
+        y: 300,
+        x: 250,
         txtWidth: null,
         align: 'center',
         font: 'impact',
