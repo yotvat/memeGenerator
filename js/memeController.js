@@ -36,12 +36,13 @@ function renderMeme() {
 
             let txtWidth = gCtx.measureText(line.txt).width
             line.txtWidth = txtWidth
-            drawFrame(line.x, line.y, line.txtWidth, line.size)
-
+            
             // line.y = y
             // line.x = gElCanvas.width / 2
-            // if (meme.selectedLineIdx === idx) {
-            // }
+            if (meme.selectedLineIdx === idx) {
+                drawFrame(line.x, line.y, line.txtWidth, line.size)
+            
+            }
 
             // y += SPACING
         })
@@ -148,9 +149,6 @@ function onSetFont({ value }) {
 }
 
 
-
-
-
 //ADD LISTENERS
 function addListeners() {
     addMouseListeners()
@@ -168,9 +166,6 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchmove', onLineMove)
     gElCanvas.addEventListener('touchend', onLineUp)
 }
-
-
-
 
 
 // //DRAG AND DROP
@@ -205,6 +200,7 @@ function onLineUp() {
     document.body.style.cursor = 'grab'
 
 }
+//
 
 function getEvPos(ev) {
     let pos = {
@@ -225,12 +221,6 @@ function getEvPos(ev) {
     return pos
 }
 
-
-
-
-
-
-//NOT WORKING YET
 function onLineUpClick(){
     lineUp()
     renderMeme()
