@@ -231,13 +231,13 @@ function getEvPos(ev) {
 
 
 //NOT WORKING YET
-// function onLineUpClick(){
-//     lineUp()
-//     renderMeme()
-// }
+function onLineUpClick(){
+    lineUp()
+    renderMeme()
+}
 
-// function onLineDownClick(){
-//     lineDown()
-//     renderMeme()
-// }
+function onLineDownClick(){
+    lineDown()
+    renderMeme()
+}
 

@@ -169,11 +169,11 @@ function setFont(value) {
 }
 
 
-//NOT WORKING YET
-// function lineUp() {
-//     gMeme.lines[gMeme.selectedLineIdx].y -= 10
-// }
+// NOT WORKING YET
+function lineUp() {
+    gMeme.lines[gMeme.selectedLineIdx].y -= 10
+}
 
-// function lineDown() {
-//     gMeme.lines[gMeme.selectedLineIdx].y += 10
-// }
+function lineDown() {
+    gMeme.lines[gMeme.selectedLineIdx].y += 10
+}
