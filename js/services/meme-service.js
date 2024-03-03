@@ -50,7 +50,6 @@ function getImg() {
 
 function findImg(id) {
     return gImg.find(img => img.id === id)
-
 }
 
 function getMeme() {
@@ -60,7 +59,6 @@ function getMeme() {
 function setColorInput(value) {
     gMeme.lines[gMeme.selectedLineIdx].color = value
     document.querySelector('.color-picker-lable').style.color = value
-
 }
 
 function setLineTxt(value) {
@@ -103,7 +101,6 @@ function switchLine() {
     if (gMeme.selectedLineIdx === gMeme.lines.length - 1) isDirUp = false
     if (gMeme.selectedLineIdx === 0) isDirUp = true
     renderMeme()
-
 }
 
 function findLine(offsetX, offsetY) {
@@ -123,21 +120,18 @@ function deleteline() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx++
     else gMeme.selectedLineIdx--
-
 }
 
 function alignLeft() {
-    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
-
+    gMeme.lines[gMeme.selectedLineIdx].x = 100
 }
 
 function alignCenter() {
-    gMeme.lines[gMeme.selectedLineIdx].align = 'center'
-
+    gMeme.lines[gMeme.selectedLineIdx].x = 250
 }
 
 function alignRight() {
-    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+    gMeme.lines[gMeme.selectedLineIdx].x = 400
 }
 
 function setFont(value) {
@@ -152,7 +146,6 @@ function isLineClick({ x: offsetX, y: offsetY }) {
     const isInside =
         offsetX >= x - 15 - (line.txtWidth / 2) && offsetX <= (x + line.txtWidth / 2) + 14 &&
         offsetY >= y - line.size && offsetY <= y + line.size
-
 
     return isInside
 }

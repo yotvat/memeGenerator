@@ -28,7 +28,7 @@ function renderMeme() {
                 x = 250
                 y = 300
             }
-            drawText(line.txt, x, y, line.color, line.size, line.align, line.font)
+            drawText(line.txt, x, y, line.color, line.size, line.font)
             let txtWidth = gCtx.measureText(line.txt).width
             line.txtWidth = txtWidth
 
@@ -39,7 +39,7 @@ function renderMeme() {
     }
 }
 
-function drawText(text, x, y, color = 'white', size = 40, align = 'center', font = 'impact') {
+function drawText(text, x, y, color = 'white', size = 40, font = 'impact') {
     const meme = getMeme()
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'white'
@@ -47,7 +47,7 @@ function drawText(text, x, y, color = 'white', size = 40, align = 'center', font
     gCtx.fillStyle = color
 
     gCtx.font = size + 'px' + ` ${font}`
-    gCtx.textAlign = align
+    gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
     gCtx.fillText(text, x, y)
@@ -105,8 +105,6 @@ function onLineClick(ev) {
     renderMeme()
     if (lineIdx === -1) return;
     else document.querySelector('.txt-canvas').value = meme.lines[lineIdx].txt
-
-
 }
 
 function onDeleteLineClick() {
@@ -117,13 +115,11 @@ function onDeleteLineClick() {
 function onAlignLeftClick() {
     alignLeft()
     renderMeme()
-
 }
 
 function onAlignCenterClick() {
     alignCenter()
     renderMeme()
-
 }
 
 function onAlignRightClick() {
@@ -159,7 +155,6 @@ function addTouchListeners() {
 // //DRAG AND DROP
 function onLineDown(ev) {
     gStartPos = getEvPos(ev)
-    // console.log('gStartPos',gStartPos)
     if (!isLineClick(gStartPos)) return
 
     setLineDrag(true)
@@ -186,7 +181,6 @@ function onLineMove(ev) {
 function onLineUp() {
     setLineDrag(false)
     document.body.style.cursor = 'grab'
-
 }
 //
 
