@@ -60,6 +60,13 @@ canvas{
     padding-top: .8em;
     cursor: pointer;
     position: relative;
+    transition: scale .2s;
+}
+.advanced-edit label:hover{
+    padding-top: .8em;
+    cursor: pointer;
+    position: relative;
+    scale: 1.2;
 }
 
 .advanced-edit label:active input{
