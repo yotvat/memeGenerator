@@ -1,30 +1,30 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #22252C;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-li{
+li {
     transition: scale .2s;
 }
 
-li:hover{
+li:hover {
     scale: 1.1;
 }
 
-img{
-width: 263px;
-border-radius: 20px;
-transition: scale .2s;
+img {
+    width: 263px;
+    border-radius: 20px;
+    transition: scale .2s;
 }
 
-img:hover{
+img:hover {
     cursor: pointer;
     scale: 1.05;
 }
@@ -32,51 +32,50 @@ img:hover{
 .rows-btn .btn,
 .advanced-edit .btn,
 .download-share .btn,
-.download-share a{
+.download-share a {
     width: 60px;
     height: 55px;
     border: 1px;
     border-radius: 5px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.btn{
+.btn {
     cursor: pointer;
 }
 
-.download-btn{
+.download-btn {
     width: 60px;
     height: 55px;
     border: 1px;
     border-radius: 5px;
 }
 
-.download-share{
+.download-share {
     display: flex;
     gap: 17px;
 }
 
-button{
+button {
     transition: scale 0.3s;
 }
 
-select:hover{
-cursor: pointer;
+select:hover {
+    cursor: pointer;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
     scale: 1.1;
 }
 
-select{
+select {
     transition: scale .3s;
 }
 
-select:hover{
+select:hover {
     scale: 1.1;
 }
-

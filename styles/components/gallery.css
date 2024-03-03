@@ -1,5 +1,5 @@
-.gallery{
-background-color: #383B42
+.gallery {
+    background-color: #383B42
 }
 
 .gallery-actions {
@@ -11,11 +11,11 @@ background-color: #383B42
     align-items: center;
 }
 
-.img-container img{
+.img-container img {
     box-shadow: 1px 2px 20px 2px black;
 }
 
-.search-container{
+.search-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,7 @@ background-color: #383B42
     padding: 10px;
 }
 
-.search-container input{
+.search-container input {
     padding: 0 6px;
     border: none;
     background: none;
@@ -36,7 +36,7 @@ background-color: #383B42
     font-size: 1em;
 }
 
-.more-btn{
+.more-btn {
     background-color: #89d8d3;
     background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
     border: none;
@@ -48,18 +48,18 @@ background-color: #383B42
     transition: scale .2s;
 }
 
-.more-btn:hover{
+.more-btn:hover {
     scale: 1.1;
 }
 
-.search{
+.search {
 
     color: #89d8d3;
     background: none;
     border: none;
 }
 
-.toggle-menu-btn{
+.toggle-menu-btn {
     background-color: #89d8d3;
     background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
     border: none;

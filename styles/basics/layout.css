@@ -1,18 +1,18 @@
-.canvas-container{
-display: flex;
-justify-content: space-around;
+.canvas-container {
+    display: flex;
+    justify-content: space-around;
 }
 
-canvas{
+canvas {
     border-radius: 10px;
 }
 
-.rows-btn{
+.rows-btn {
     display: flex;
     gap: 17px;
 }
 
-.meme-editor{
+.meme-editor {
     background-color: #383B42;
     width: 528px;
     height: 549px;
@@ -20,7 +20,7 @@ canvas{
     border-radius: 15px;
 }
 
-.edit-zone{
+.edit-zone {
     display: flex;
     flex-direction: column;
     margin-top: 70px;
@@ -28,23 +28,23 @@ canvas{
     gap: 17px;
 }
 
-.advanced-edit{
+.advanced-edit {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-   background-color: RGBA(25, 165, 159, 1);
-   width: 447px;
-   border-radius: 5px;
-   justify-content: center;
-   gap: 25px;
+    background-color: RGBA(25, 165, 159, 1);
+    width: 447px;
+    border-radius: 5px;
+    justify-content: center;
+    gap: 25px;
 }
 
-.advanced-edit .btn{
+.advanced-edit .btn {
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
-.advanced-edit input{
+.advanced-edit input {
     width: 30px;
     height: 30px;
     border: none;
@@ -56,27 +56,27 @@ canvas{
     right: 3px;
 }
 
-.advanced-edit label{
+.advanced-edit label {
     padding-top: .8em;
     cursor: pointer;
     position: relative;
     transition: scale .2s;
 }
 
-.advanced-edit label:hover{
+.advanced-edit label:hover {
     padding-top: .8em;
     cursor: pointer;
     position: relative;
     scale: 1.2;
 }
 
-.advanced-edit label:active input{
+.advanced-edit label:active input {
     position: absolute;
     top: 0;
     right: 0;
 }
 
-.advanced-edit select{
+.advanced-edit select {
     margin-bottom: 5px;
     border-radius: 5px;
     border: none;

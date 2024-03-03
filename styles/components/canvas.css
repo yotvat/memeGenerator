@@ -1,49 +1,49 @@
-canvas{
+canvas {
     border: solid 1px
 }
 
-.canvas-container{
+.canvas-container {
     margin-top: 100px;
 }
 
-.switch-row-btn{
+.switch-row-btn {
     color: white;
     background-color: #5ABED7;
 }
 
-.add-row-btn{
+.add-row-btn {
     color: white;
     background-color: #40DE58;
 }
 
-.delete-row-btn{
+.delete-row-btn {
     color: white;
     background-color: #D42437;
-    
+
 }
 
-.download-btn{
+.download-btn {
     cursor: pointer;
     color: white;
     background-color: #1E7CD3;
 }
 
-.share-btn{
-    color:white;
+.share-btn {
+    color: white;
     background-color: #8F44BB;
 }
 
-.font-up{
+.font-up {
     color: black;
     background-color: whitesmoke;
 }
 
-.font-down{
+.font-down {
     color: black;
     background-color: whitesmoke;
 }
 
-.background-img{
+.background-img {
     position: absolute;
     top: 0;
     z-index: -1;
@@ -52,7 +52,7 @@ canvas{
 
 }
 
-.txt-canvas{
+.txt-canvas {
     margin-top: 6px;
     background: #e6e7e8;
     height: 40px;
@@ -62,4 +62,3 @@ canvas{
     text-align: center;
 
 }
-

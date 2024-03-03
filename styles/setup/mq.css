@@ -62,13 +62,13 @@
         height: 46px;
     }
 
-    .advanced-edit .download-btn ,
+    .advanced-edit .download-btn,
     .download-share .btn {
         width: 54px;
         height: 46px;
     }
 
-    button.fa.download-btn{
+    button.fa.download-btn {
         width: 54px;
         height: 46px;
     }
@@ -140,7 +140,7 @@
         font-size: 1.2em;
     }
 
-    .more-btn{
+    .more-btn {
         font-size: .6em;
     }
 
