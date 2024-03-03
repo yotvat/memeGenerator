@@ -62,6 +62,7 @@ canvas{
     position: relative;
     transition: scale .2s;
 }
+
 .advanced-edit label:hover{
     padding-top: .8em;
     cursor: pointer;

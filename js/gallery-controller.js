@@ -19,7 +19,6 @@ function onGalleryClick() {
     document.querySelector('.gallery').classList.remove('hidden')
     document.querySelector('.editor').classList.add('hidden')
     document.body.classList.remove('menu-open')
-
 }
 
 function toggleMenu() {
@@ -33,7 +32,6 @@ function onFlexibleClick() {
     const img = getImg()
     const meme = getMeme()
     const idx = getRandomInt(0, 19)
-    img[idx]
     setImg(img[idx].id)
     meme.lines[meme.selectedLineIdx].txt = img[idx].keywords[getRandomInt(0, 2)]
     renderMeme()

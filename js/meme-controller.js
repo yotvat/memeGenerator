@@ -70,12 +70,12 @@ function onColorInput({ value }) {
     renderMeme()
 }
 
-function onFontUp() {
+function onFontUpClick(){
     fontUp()
     renderMeme()
 }
 
-function onFontDown() {
+function onFontDownClick() {
     fontDown()
     renderMeme()
 }
