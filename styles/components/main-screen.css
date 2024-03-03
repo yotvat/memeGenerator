@@ -6,7 +6,6 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity .6s;
-
 }
 
 body.menu-open .main-screen {

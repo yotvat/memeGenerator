@@ -45,6 +45,11 @@ background-color: #383B42
     height: 35px;
     font-size: 1em;
     color: white;
+    transition: scale .2s;
+}
+
+.more-btn:hover{
+    scale: 1.1;
 }
 
 .search{

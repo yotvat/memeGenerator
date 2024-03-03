@@ -39,10 +39,10 @@ function renderMeme() {
     }
 }
 
-function drawText(text, x, y, color = 'black', size = 40, align = 'center', font = 'impact') {
+function drawText(text, x, y, color = 'white', size = 40, align = 'center', font = 'impact') {
     const meme = getMeme()
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'black'
+    gCtx.strokeStyle = 'white'
 
     gCtx.fillStyle = color
 
@@ -60,7 +60,6 @@ function onSetLineChange({ value }) {
 }
 
 function downloadCanvas(elLink) {
-    console.log('hi')
     elLink.download = 'your-canvas'
     const dataUrl = gElCanvas.toDataURL()
     elLink.href = dataUrl
@@ -71,13 +70,13 @@ function onColorInput({ value }) {
     renderMeme()
 }
 
-function onFontUpClick() {
-    fontUpClick()
+function onFontUp() {
+    fontUp()
     renderMeme()
 }
 
-function onFontDownClick() {
-    FontDownClick()
+function onFontDown() {
+    fontDown()
     renderMeme()
 }
 

@@ -86,11 +86,11 @@ function addLine() {
     gMeme.lines.push(line)
 }
 
-function fontUpClick() {
+function fontUp() {
     gMeme.lines[gMeme.selectedLineIdx].size += 5
 }
 
-function FontDownClick() {
+function fontDown() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 5
 }
 

@@ -10,7 +10,6 @@
     .toggle-menu-btn {
         display: none;
     }
-
 }
 
 @media (width < 1135px) {
@@ -34,7 +33,6 @@
     .meme-editor {
         width: 500px;
         height: 400px;
-
     }
 
     .edit-zone {
@@ -45,10 +43,8 @@
         display: none;
     }
 
-
     .edit-zone {
         gap: 9px;
-
     }
 
     .rows-btn .btn {
