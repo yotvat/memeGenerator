@@ -29,6 +29,7 @@ canvas{
 }
 
 .advanced-edit{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
    background-color: RGBA(25, 165, 159, 1);
@@ -49,6 +50,22 @@ canvas{
     border: none;
     border-radius: 5px;
     margin-bottom: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 1px;
+    right: 3px;
+}
+
+.advanced-edit label{
+    padding-top: .8em;
+    cursor: pointer;
+    position: relative;
+}
+
+.advanced-edit label:active input{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .advanced-edit select{

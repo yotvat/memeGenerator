@@ -78,3 +78,8 @@
     content: "\f309 ";
 }
 
+.fa.color::before {
+    font-size: 2em;
+    content: "\f53f ";
+}
+

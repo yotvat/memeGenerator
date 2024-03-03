@@ -59,6 +59,8 @@ function getMeme() {
 
 function setColorInput(value) {
     gMeme.lines[gMeme.selectedLineIdx].color = value
+    document.querySelector('.color-picker-lable').style.color = value
+
 }
 
 function setLineTxt(value) {
